@@ -204,7 +204,7 @@ const updateOrderStatus = asyncHandler(async (req: Request, res: Response) => {
   if (req.user) {
     const isAdmin = req.user?.role === "admin";
     const isPending = order.status === "pending";
-    const isOwner = req.user._id.toString() !== order.userId.toString();
+    const isOwner = req.user._id.toString() === order.userId.toString();
     if ((!isAdmin && !isPending) || !isOwner) {
       res.status(403);
       throw new Error(
