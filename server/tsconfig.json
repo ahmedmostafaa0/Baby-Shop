@@ -9,7 +9,7 @@
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "sourceMap": true, // false at production
+    "sourceMap": false, // false at production
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "isolatedModules": true,

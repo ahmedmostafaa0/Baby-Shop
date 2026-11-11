@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middlewares/auth");
+const cart_1 = require("../controllers/cart");
+const router = (0, express_1.Router)();
+router.use(auth_1.protect);
+router.get('/', cart_1.getCart);
+router.post('/', cart_1.addItemToCart);
+router.delete('/', cart_1.clearCart);
+router.put('/:productId', cart_1.updateCartItem);
+router.delete('/:productId', cart_1.removeItemFromCart);
+exports.default = router;
